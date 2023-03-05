@@ -25,7 +25,9 @@ module.exports = function createArticleController(req, res) {
         data.push(newArticle);
 
         // WRITE TO LOCAL FILE
-        fs.writeFileSync("../data.json", JSON.stringify(data));
+        fs.writeFileSync("data.json", JSON.stringify(data));
+
+        console.log("CREATED!", JSON.parse(fs.readFileSync("data.json")))
 
         // RETURN CREATE RESPONSE WITH NEW ARTICLE
         res.status(STATUS_CODES.CREATED).json(newArticle);

@@ -30,7 +30,7 @@ module.exports = function updateArticleController(req, res) {
         data[oldArticleIndex] = newArticle;
 
         // WRITE TO LOCAL FILE
-        fs.writeFileSync("../data.json", JSON.stringify(data));
+        fs.writeFileSync("data.json", JSON.stringify(data));
 
         // RETURN OK RESPONSE WITH UPDATED ARTICLE
         res.status(STATUS_CODES.OK).json(newArticle);
